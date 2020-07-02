@@ -2,9 +2,10 @@ object Versions {
     const val android_core = "1.3.0"
     const val android_appcompat = "1.1.0"
     const val android_legacy_support = "1.0.0"
-    const val android_lifecycle = "2.3.0-alpha04"
+    const val android_lifecycle = "2.2.0"
     const val android_fragment = "1.3.0-alpha06"
     const val android_constraint_layout = "1.1.3"
+    const val android_vector_drawable = "1.1.0"
     const val android_paging_runtime = "2.1.2"
     const val android_test_espresso_core = "3.2.0"
     const val android_test_junit = "1.1.1"
@@ -52,11 +53,13 @@ object Android {
     const val appcompat = "androidx.appcompat:appcompat:${Versions.android_appcompat}"
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.android_fragment}"
     const val legacy = "androidx.legacy:legacy-support-v4:${Versions.android_legacy_support}"
+    const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.android_lifecycle}"
     const val lifecycle_view_model = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.android_lifecycle}"
     const val lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.android_lifecycle}"
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val paging = "androidx.paging:paging-runtime:${Versions.android_paging_runtime}"
+    const val vector_drawable = "androidx.vectordrawable:vectordrawable:${Versions.android_vector_drawable}"
 }
 
 object AndroidCostumeLibs {
