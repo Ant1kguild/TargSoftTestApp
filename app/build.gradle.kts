@@ -58,4 +58,5 @@ dependencies {
     addAndroid()
     addNetWork()
     addDaggerHilt()
+    addRoom()
 }

@@ -6,7 +6,7 @@ object Versions {
     const val android_fragment = "1.3.0-alpha06"
     const val android_constraint_layout = "1.1.3"
     const val android_vector_drawable = "1.1.0"
-    const val android_paging_runtime = "2.1.2"
+    const val android_paging_runtime = "3.0.0-alpha02"
     const val android_test_espresso_core = "3.2.0"
     const val android_test_junit = "1.1.1"
     const val dagger_hilt = "2.28-alpha"
@@ -29,6 +29,7 @@ object Versions {
     const val okhttp = "4.7.2"
     const val navigation = "2.3.0"
     const val retrofit = "2.8.2"
+    const val room = "2.2.5"
     const val test_junit = "4.13"
 
 }
@@ -91,6 +92,7 @@ object DependencyInjection {
     const val koin_core = "org.koin:koin-android:${Versions.koin}"
     const val koin_view_model = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     const val hilt_core = "com.google.dagger:hilt-android:${Versions.dagger_hilt}"
+    const val hilt_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_hilt}"
     const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
 }
 
@@ -103,6 +105,12 @@ object Firebase {
     const val analytics = "com.google.firebase:firebase-analytics-ktx:${Versions.firebase_analytics}"
     const val database = "com.google.firebase:firebase-database-ktx:${Versions.firebase_database}"
     const val storage = "com.google.firebase:firebase-storage-ktx:${Versions.firebase_storage}"
+}
+
+object Room {
+    const val runtime = "androidx.room:room-runtime:${Versions.room}"
+    const val compiler = "androidx.room:room-compiler:${Versions.room}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
 }
 
 object Test {

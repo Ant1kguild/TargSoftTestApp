@@ -1,5 +1,21 @@
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
+fun DependencyHandlerScope.addAndroid(
+    implementation: String = "implementation",
+    kapt: String = "kapt"
+) {
+    add(implementation, Android.core)
+    add(implementation, Android.appcompat)
+    add(implementation, Android.constraint_layout)
+    add(implementation, Android.vector_drawable)
+    add(implementation, Google.material_design)
+    add(implementation, Android.lifecycle_extensions)
+    add(implementation, Android.lifecycle_view_model)
+    add(implementation, Android.lifecycle_livedata)
+    add(implementation, Android.navigation_fragment)
+    add(implementation, Android.navigation_ui)
+    add(implementation, Android.paging)
+}
 
 fun DependencyHandlerScope.addKotlinCoroutines(
     implementation: String = "implementation"
@@ -30,18 +46,12 @@ fun DependencyHandlerScope.addDaggerHilt(
     add(kapt, DependencyInjection.hilt_compiler)
 }
 
-fun DependencyHandlerScope.addAndroid(
+fun DependencyHandlerScope.addRoom(
     implementation: String = "implementation",
     kapt: String = "kapt"
 ) {
-    add(implementation, Android.core)
-    add(implementation, Android.appcompat)
-    add(implementation, Android.constraint_layout)
-    add(implementation, Android.vector_drawable)
-    add(implementation, Google.material_design)
-    add(implementation, Android.lifecycle_extensions)
-    add(implementation, Android.lifecycle_view_model)
-    add(implementation, Android.lifecycle_livedata)
-    add(implementation, Android.navigation_fragment)
-    add(implementation, Android.navigation_ui)
+    add(implementation, Room.runtime)
+    add(implementation, Room.room_ktx)
+    add(kapt, Room.compiler)
 }
+
