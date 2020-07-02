@@ -13,10 +13,10 @@ interface FavoriteCatDao {
     fun getFavoriteCat(id: Int): Flow<FavoriteCat>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(cat: FavoriteCat)
+    suspend fun insertFavoriteCat(cat: FavoriteCat)
 
     @Delete
-    suspend fun deleteAnimal(cat: FavoriteCat)
+    suspend fun deleteCat(cat: FavoriteCat)
 
     @Query(value = "DELETE FROM cat_table")
     suspend fun deleteAll()

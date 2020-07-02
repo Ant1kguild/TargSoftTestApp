@@ -4,6 +4,6 @@ import androidx.paging.PagingData
 import com.app.targsoft.test.data.api.model.Cat
 import kotlinx.coroutines.flow.Flow
 
-interface CatDataSource {
+interface RemoteCatDataSource {
     fun getPager(order:String) : Flow<PagingData<Cat>>
 }

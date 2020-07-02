@@ -7,7 +7,7 @@ import com.app.targsoft.test.data.api.CatApiHelper
 import com.app.targsoft.test.data.api.model.Cat
 import kotlinx.coroutines.flow.Flow
 
-class CatDataSourceImpl(private val api: CatApiHelper) : CatDataSource {
+class RemoteCatDataSourceImpl(private val api: CatApiHelper) : RemoteCatDataSource {
 
     companion object {
         private const val PAGE_SIZE = 10
