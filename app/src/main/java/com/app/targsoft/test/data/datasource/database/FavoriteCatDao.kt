@@ -5,7 +5,7 @@ import com.app.targsoft.test.data.datasource.model.FavoriteCat
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface FavoriteCarDao {
+interface FavoriteCatDao {
     @Query(value = "SELECT * FROM cat_table")
     fun getAllFavoriteCats(): Flow<List<FavoriteCat>>
 
