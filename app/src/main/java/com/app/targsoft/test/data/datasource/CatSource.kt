@@ -2,7 +2,7 @@ package com.app.targsoft.test.data.datasource
 
 import androidx.paging.PagingSource
 import com.app.targsoft.test.data.api.CatApiHelper
-import com.app.targsoft.test.data.model.Cat
+import com.app.targsoft.test.data.api.model.Cat
 import retrofit2.HttpException
 import java.io.IOException
 

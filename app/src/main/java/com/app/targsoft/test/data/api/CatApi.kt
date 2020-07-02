@@ -1,6 +1,6 @@
 package com.app.targsoft.test.data.api
 
-import com.app.targsoft.test.data.model.Cat
+import com.app.targsoft.test.data.api.model.Cat
 import retrofit2.http.GET
 import retrofit2.http.Query
 import javax.inject.Inject

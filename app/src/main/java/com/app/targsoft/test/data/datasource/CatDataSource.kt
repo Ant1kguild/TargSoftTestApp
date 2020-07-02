@@ -1,7 +1,7 @@
 package com.app.targsoft.test.data.datasource
 
 import androidx.paging.PagingData
-import com.app.targsoft.test.data.model.Cat
+import com.app.targsoft.test.data.api.model.Cat
 import kotlinx.coroutines.flow.Flow
 
 interface CatDataSource {

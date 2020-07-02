@@ -1,4 +1,4 @@
-package com.app.targsoft.test.data.model
+package com.app.targsoft.test.data.api.model
 
 import com.squareup.moshi.JsonClass
 
