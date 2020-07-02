@@ -1,23 +1,23 @@
-import org.gradle.api.Project
 import org.gradle.kotlin.dsl.DependencyHandlerScope
-import org.gradle.kotlin.dsl.dependencies
 
 
-fun Project.addKotlinCoroutinesFlow(configurationName: String = "implementation") {
-    dependencies {
-        add(configurationName, Kotlin.stdlib)
-        add(configurationName, Kotlin.coroutine_core)
-        add(configurationName, Kotlin.coroutine_android)
-        add(configurationName, Kotlin.coroutine_play_service)
-    }
-}
-
-fun DependencyHandlerScope.addKotlinCoroutinesFlow(
-    implementation: String = "implementation",
-    kapt: String = "kapt"
+fun DependencyHandlerScope.addKotlinCoroutines(
+    implementation: String = "implementation"
 ) {
     add(implementation, Kotlin.stdlib)
     add(implementation, Kotlin.coroutine_core)
     add(implementation, Kotlin.coroutine_android)
-    add(implementation, Kotlin.coroutine_play_service)
+}
+
+
+fun DependencyHandlerScope.addNetWork(
+    implementation: String = "implementation",
+    kapt: String = "kapt"
+) {
+    add(implementation, Network.okhttp3_core)
+    add(implementation, Network.okhttp3_logging_interceptor)
+    add(implementation, Network.retrofit2_core)
+    add(implementation, Network.retrofit2_moshi_converter)
+    add(implementation, Network.moshi_kotlin_core)
+    add(kapt, Network.moshi_codegen)
 }
