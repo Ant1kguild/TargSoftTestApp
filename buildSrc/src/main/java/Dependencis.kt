@@ -8,6 +8,7 @@ object Versions {
     const val android_paging_runtime = "2.1.2"
     const val android_test_espresso_core = "3.2.0"
     const val android_test_junit = "1.1.1"
+    const val dagger_hilt = "2.28-alpha"
     const val coil = "0.11.0"
     const val firebase_auth = "19.3.1"
     const val firebase_analytics = "17.4.3"
@@ -35,6 +36,7 @@ object Gradle {
     const val android_tools = "com.android.tools.build:gradle:${Versions.gradle}"
     const val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val android_safe_arg_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    const val dagger_hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger_hilt}"
 }
 
 object Kotlin {
@@ -85,6 +87,8 @@ object Network {
 object DependencyInjection {
     const val koin_core = "org.koin:koin-android:${Versions.koin}"
     const val koin_view_model = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+    const val hilt_core = "com.google.dagger:hilt-android:${Versions.dagger_hilt}"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
 }
 
 object ImageLoader {

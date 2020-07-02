@@ -21,3 +21,11 @@ fun DependencyHandlerScope.addNetWork(
     add(implementation, Network.moshi_kotlin_core)
     add(kapt, Network.moshi_codegen)
 }
+
+fun DependencyHandlerScope.addDaggerHilt(
+    implementation: String = "implementation",
+    kapt: String = "kapt"
+) {
+    add(implementation, DependencyInjection.hilt_core)
+    add(kapt, DependencyInjection.hilt_compiler)
+}
