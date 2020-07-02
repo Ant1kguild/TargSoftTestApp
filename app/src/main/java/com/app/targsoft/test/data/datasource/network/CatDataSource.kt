@@ -1,4 +1,4 @@
-package com.app.targsoft.test.data.datasource
+package com.app.targsoft.test.data.datasource.network
 
 import androidx.paging.PagingData
 import com.app.targsoft.test.data.api.model.Cat
