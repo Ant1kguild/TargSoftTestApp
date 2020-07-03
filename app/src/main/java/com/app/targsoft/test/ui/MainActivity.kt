@@ -1,4 +1,4 @@
-package com.app.targsoft.test
+package com.app.targsoft.test.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -8,10 +8,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.app.targsoft.test.R
 
 class MainActivity : AppCompatActivity() {
 
-    private val appBarList = setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+    private val appBarList = setOf(
+        R.id.navigation_home,
+        R.id.navigation_dashboard,
+        R.id.navigation_notifications
+    )
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
