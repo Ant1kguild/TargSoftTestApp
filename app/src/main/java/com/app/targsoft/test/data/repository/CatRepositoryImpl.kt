@@ -1,22 +1,27 @@
 package com.app.targsoft.test.data.repository
 
 import androidx.paging.PagingData
-import com.app.targsoft.test.data.api.model.Cat
 import com.app.targsoft.test.data.datasource.database.FavoriteCatDao
 import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import com.app.targsoft.test.data.datasource.network.RemoteCatDataSource
+import com.app.targsoft.test.data.mapper.MapperCatToFavoriteCat
 import com.app.targsoft.test.domain.repository.CatRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 
 class CatRepositoryImpl(
     private val remoteCatDataSource: RemoteCatDataSource,
     private val favoriteCatDatabase: FavoriteCatDao,
+    private val mapper: MapperCatToFavoriteCat,
     private val ioDispatcher: CoroutineDispatcher
 ) : CatRepository {
-    override fun getAllCatsStream(order: String): Flow<PagingData<Cat>> = remoteCatDataSource.getPager(order).flowOn(ioDispatcher)
+    override fun getAllCatsStream(order: String): Flow<PagingData<FavoriteCat>> =
+        remoteCatDataSource.getPager(order)
+            .map { it.map { cat -> mapper.map(cat) } }
+            .flowOn(ioDispatcher)
 
     override fun getAllFavoriteCats(): Flow<List<FavoriteCat>> = favoriteCatDatabase.getAllFavoriteCats().flowOn(ioDispatcher)
 

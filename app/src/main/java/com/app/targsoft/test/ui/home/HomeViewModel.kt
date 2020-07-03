@@ -16,4 +16,5 @@ class HomeViewModel @ViewModelInject constructor(
     val streamResult = getPagingCatsUseCase.exec("Desc")
         .asLiveData(viewModelScope.coroutineContext)
 
+    //fun addCatToFavorite()
 }
