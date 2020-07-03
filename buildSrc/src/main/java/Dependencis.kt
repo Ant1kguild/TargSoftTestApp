@@ -10,6 +10,7 @@ object Versions {
     const val android_test_espresso_core = "3.2.0"
     const val android_test_junit = "1.1.1"
     const val dagger_hilt = "2.28-alpha"
+    const val dagger_hilt_lifecycle = "1.0.0-alpha01"
     const val coil = "0.11.0"
     const val firebase_auth = "19.3.1"
     const val firebase_analytics = "17.4.3"
@@ -92,7 +93,8 @@ object DependencyInjection {
     const val koin_core = "org.koin:koin-android:${Versions.koin}"
     const val koin_view_model = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     const val hilt_core = "com.google.dagger:hilt-android:${Versions.dagger_hilt}"
-    const val hilt_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_hilt}"
+    const val hilt_lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_hilt_lifecycle}"
+    const val hilt_lifecycle_compiler = "androidx.hilt:hilt-compiler:${Versions.dagger_hilt_lifecycle}"
     const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
 }
 

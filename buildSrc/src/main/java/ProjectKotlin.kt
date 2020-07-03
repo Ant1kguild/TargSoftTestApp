@@ -44,6 +44,8 @@ fun DependencyHandlerScope.addDaggerHilt(
 ) {
     add(implementation, DependencyInjection.hilt_core)
     add(kapt, DependencyInjection.hilt_compiler)
+    add(implementation, DependencyInjection.hilt_lifecycle)
+    add(kapt, DependencyInjection.hilt_compiler)
 }
 
 fun DependencyHandlerScope.addRoom(
