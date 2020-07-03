@@ -3,9 +3,9 @@ package com.app.targsoft.test.data.repository
 import androidx.paging.PagingData
 import com.app.targsoft.test.data.api.model.Cat
 import com.app.targsoft.test.data.datasource.database.FavoriteCatDao
-import com.app.targsoft.test.data.datasource.model.FavoriteCat
+import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import com.app.targsoft.test.data.datasource.network.RemoteCatDataSource
-import com.app.targsoft.test.domain.CatRepository
+import com.app.targsoft.test.domain.repository.CatRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn

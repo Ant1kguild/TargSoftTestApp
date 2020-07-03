@@ -1,8 +1,8 @@
-package com.app.targsoft.test.domain
+package com.app.targsoft.test.domain.repository
 
 import androidx.paging.PagingData
 import com.app.targsoft.test.data.api.model.Cat
-import com.app.targsoft.test.data.datasource.model.FavoriteCat
+import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import kotlinx.coroutines.flow.Flow
 
 interface CatRepository {

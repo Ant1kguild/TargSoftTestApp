@@ -1,7 +1,7 @@
 package com.app.targsoft.test.data.datasource.database
 
 import androidx.room.*
-import com.app.targsoft.test.data.datasource.model.FavoriteCat
+import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import kotlinx.coroutines.flow.Flow
 
 @Dao

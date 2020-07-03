@@ -1,4 +1,4 @@
-package com.app.targsoft.test.data.datasource.model
+package com.app.targsoft.test.data.datasource.database.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
