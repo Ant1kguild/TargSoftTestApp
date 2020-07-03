@@ -15,8 +15,7 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 class ApplicationModule {
 
-    @Provides
-    fun provideBaseCatUrl() = "https://api.thecatapi.com/"
+   private val API = "https://api.thecatapi.com/"
 
     @Provides
     fun provideMoshi(): Moshi = Moshi.Builder().build()
@@ -27,10 +26,10 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okhttp: OkHttpClient, moshi: Moshi,  base_url: String): Retrofit =
+    fun provideRetrofit(okhttp: OkHttpClient, moshi: Moshi): Retrofit =
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .baseUrl(base_url)
+            .baseUrl(API)
             .client(okhttp)
             .build()
 
