@@ -8,6 +8,7 @@ import com.app.targsoft.test.data.datasource.network.RemoteCatDataSource
 import com.app.targsoft.test.domain.repository.CatRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class CatRepositoryImpl(
@@ -21,9 +22,9 @@ class CatRepositoryImpl(
 
     override fun getFavoriteCatById(id: Int): Flow<FavoriteCat> = favoriteCatDatabase.getFavoriteCat(id).flowOn(ioDispatcher)
 
-    override suspend fun addFavoriteCat(cat: FavoriteCat) = favoriteCatDatabase.insertFavoriteCat(cat)
+    override fun addFavoriteCat(cat: FavoriteCat): Flow<Unit> = flow { emit(favoriteCatDatabase.insertFavoriteCat(cat)) }.flowOn(ioDispatcher)
 
-    override suspend fun deleteFavoriteCat(cat: FavoriteCat) = favoriteCatDatabase.deleteCat(cat)
+    override fun deleteFavoriteCat(cat: FavoriteCat): Flow<Unit> = flow { emit(favoriteCatDatabase.deleteCat(cat)) }.flowOn(ioDispatcher)
 
-    override suspend fun clear() = favoriteCatDatabase.deleteAll()
+    override fun clear(): Flow<Unit> = flow { emit(favoriteCatDatabase.deleteAll()) }.flowOn(ioDispatcher)
 }

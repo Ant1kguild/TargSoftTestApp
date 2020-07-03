@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface CatRepository {
     fun getAllCatsStream(order: String): Flow<PagingData<Cat>>
-    fun getAllFavoriteCats() : Flow<List<FavoriteCat>>
-    fun getFavoriteCatById(id: Int) : Flow<FavoriteCat>
-    suspend fun addFavoriteCat(cat: FavoriteCat)
-    suspend fun deleteFavoriteCat(cat: FavoriteCat)
-    suspend fun clear()
+    fun getAllFavoriteCats(): Flow<List<FavoriteCat>>
+    fun getFavoriteCatById(id: Int): Flow<FavoriteCat>
+    fun addFavoriteCat(cat: FavoriteCat): Flow<Unit>
+    fun deleteFavoriteCat(cat: FavoriteCat): Flow<Unit>
+    fun clear(): Flow<Unit>
 
 }
