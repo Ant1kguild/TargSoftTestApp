@@ -1,8 +1,7 @@
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
 fun DependencyHandlerScope.addAndroid(
-    implementation: String = "implementation",
-    kapt: String = "kapt"
+    implementation: String = "implementation"
 ) {
     add(implementation, Android.core)
     add(implementation, Android.appcompat)
