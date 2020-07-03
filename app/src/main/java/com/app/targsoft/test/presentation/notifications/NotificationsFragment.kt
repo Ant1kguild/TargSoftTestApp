@@ -1,4 +1,4 @@
-package com.app.targsoft.test.ui.notifications
+package com.app.targsoft.test.presentation.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

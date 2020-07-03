@@ -1,4 +1,4 @@
-package com.app.targsoft.test.ui
+package com.app.targsoft.test.presentation
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

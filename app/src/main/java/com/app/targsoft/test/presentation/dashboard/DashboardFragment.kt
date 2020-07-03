@@ -1,4 +1,4 @@
-package com.app.targsoft.test.ui.dashboard
+package com.app.targsoft.test.presentation.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
