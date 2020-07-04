@@ -1,10 +1,7 @@
 package com.app.targsoft.test.presentation.home
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import com.app.targsoft.test.domain.usecases.AddCatToFavoriteUseCase
 import com.app.targsoft.test.domain.usecases.GetPagingCatsUseCase
@@ -18,7 +15,7 @@ class HomeViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     private val mutableToastText = MutableLiveData<String>()
-    val toastText = mutableToastText
+    val toastText: LiveData<String> = mutableToastText
 
     val streamResult = getPagingCatsUseCase.exec("Desc")
         .asLiveData(viewModelScope.coroutineContext)

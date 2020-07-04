@@ -12,6 +12,8 @@ import com.app.targsoft.test.data.mapper.MapperCatToFavoriteCat
 import com.app.targsoft.test.data.repository.CatRepositoryImpl
 import com.app.targsoft.test.domain.repository.CatRepository
 import com.app.targsoft.test.domain.usecases.AddCatToFavoriteUseCase
+import com.app.targsoft.test.domain.usecases.DeleteFavoriteUseCase
+import com.app.targsoft.test.domain.usecases.GetFavoriteUseCase
 import com.app.targsoft.test.domain.usecases.GetPagingCatsUseCase
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -99,5 +101,11 @@ class ApplicationModule {
 
     @Provides
     fun provideGetPagingCatsUseCase(repo: CatRepository): GetPagingCatsUseCase = GetPagingCatsUseCase(repo)
+
+    @Provides
+    fun provideGetFavoriteUseCase(repo: CatRepository): GetFavoriteUseCase = GetFavoriteUseCase(repo)
+
+    @Provides
+    fun provideDeleteFavoriteUseCase(repo: CatRepository): DeleteFavoriteUseCase = DeleteFavoriteUseCase(repo)
 
 }
