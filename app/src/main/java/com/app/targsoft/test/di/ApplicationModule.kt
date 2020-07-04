@@ -22,6 +22,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -31,15 +32,21 @@ import javax.inject.Singleton
 class ApplicationModule {
 
     companion object {
-        private const val API = "https://api.thecatapi.com/"
+        private const val API = "https://api.thecatapi.com/v1/"
     }
 
     @Provides
     fun provideMoshi(): Moshi = Moshi.Builder().build()
 
+
+
     @Provides
     @Singleton
-    fun provideOkHttp(): OkHttpClient = OkHttpClient.Builder().build()
+    fun provideOkHttp(): OkHttpClient {
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
+        return OkHttpClient.Builder().addInterceptor(logging).build()
+    }
 
     @Provides
     @Singleton
