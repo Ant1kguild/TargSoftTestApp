@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.app.targsoft.test.data.datasource.database.model.FavoriteCat
 import com.app.targsoft.test.databinding.RecyclerViewItemBinding
+import com.bumptech.glide.Glide
 
 class CatAdapter(
     private val onClickAddFavorite: (cat: FavoriteCat) -> Unit,
@@ -52,5 +53,8 @@ class CatViewHolder(
     fun bind(cat: FavoriteCat) {
         view.ivAddFavorite.setOnClickListener { onClickAddFavorite(cat) }
         view.ivDownload.setOnClickListener { onClickDownload(cat.url) }
+        view.ivMain.apply {
+            Glide.with(context).load(cat.url).override(1080,1080).into(this)
+        }
     }
 }
