@@ -65,3 +65,9 @@ fun DependencyHandlerScope.addImageLoader(
     add(kapt, ImageLoader.glide_compiler)
 }
 
+fun DependencyHandlerScope.addFileDownloader(
+    implementation: String = "implementation"
+) {
+    add(implementation, Downloader.file_downloader_service)
+}
+

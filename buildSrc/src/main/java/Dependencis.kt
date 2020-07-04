@@ -16,6 +16,7 @@ object Versions {
     const val firebase_analytics = "17.4.3"
     const val firebase_database = "19.3.1"
     const val firebase_storage = "19.1.1"
+    const val filedownloadservice = "1.2"
     const val glide = "4.11.0"
     const val gradle = "4.0.0"
     const val google_material_design = "1.3.0-alpha01"
@@ -126,4 +127,8 @@ object Test {
 object AndroidTest {
     const val junit = "androidx.test.ext:junit:${Versions.android_test_junit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.android_test_espresso_core}"
+}
+
+object Downloader{
+    const val file_downloader_service = "com.github.naumanmir:filedownloadservice:${Versions.filedownloadservice}"
 }
