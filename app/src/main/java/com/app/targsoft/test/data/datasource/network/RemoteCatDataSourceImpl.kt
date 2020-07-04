@@ -6,8 +6,9 @@ import androidx.paging.PagingData
 import com.app.targsoft.test.data.api.CatApiHelper
 import com.app.targsoft.test.data.api.model.Cat
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class RemoteCatDataSourceImpl(private val api: CatApiHelper) : RemoteCatDataSource {
+class RemoteCatDataSourceImpl @Inject constructor(private val api: CatApiHelper) : RemoteCatDataSource {
 
     companion object {
         private const val PAGE_SIZE = 10
