@@ -1,6 +1,7 @@
 package com.app.targsoft.test.presentation.home
 
 import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -16,10 +17,15 @@ class HomeViewModel @ViewModelInject constructor(
     private val addCatToFavoriteUseCase : AddCatToFavoriteUseCase
 ) : ViewModel() {
 
+    private val mutableToastText = MutableLiveData<String>()
+    val toastText = mutableToastText
+
     val streamResult = getPagingCatsUseCase.exec("Desc")
         .asLiveData(viewModelScope.coroutineContext)
 
     fun addCatToFavorite(cat: FavoriteCat) = viewModelScope.launch {
-        addCatToFavoriteUseCase.exec(cat).collect()
+        addCatToFavoriteUseCase.exec(cat).collect{
+            mutableToastText.value = "Add cat to favorite"
+        }
     }
 }
