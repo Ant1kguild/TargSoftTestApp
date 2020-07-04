@@ -5,6 +5,7 @@ fun DependencyHandlerScope.addAndroid(
 ) {
     add(implementation, Android.core)
     add(implementation, Android.appcompat)
+    add(implementation, Android.fragment)
     add(implementation, Android.constraint_layout)
     add(implementation, Android.vector_drawable)
     add(implementation, Google.material_design)
@@ -44,7 +45,7 @@ fun DependencyHandlerScope.addDaggerHilt(
     add(implementation, DependencyInjection.hilt_core)
     add(kapt, DependencyInjection.hilt_compiler)
     add(implementation, DependencyInjection.hilt_lifecycle)
-    add(kapt, DependencyInjection.hilt_compiler)
+    add(kapt, DependencyInjection.hilt_lifecycle_compiler)
 }
 
 fun DependencyHandlerScope.addRoom(
@@ -54,5 +55,13 @@ fun DependencyHandlerScope.addRoom(
     add(implementation, Room.runtime)
     add(implementation, Room.room_ktx)
     add(kapt, Room.compiler)
+}
+
+fun DependencyHandlerScope.addImageLoader(
+    implementation: String = "implementation",
+    kapt: String = "kapt"
+) {
+    add(implementation, ImageLoader.glide_core)
+    add(kapt, ImageLoader.glide_compiler)
 }
 

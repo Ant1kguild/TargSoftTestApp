@@ -16,6 +16,7 @@ object Versions {
     const val firebase_analytics = "17.4.3"
     const val firebase_database = "19.3.1"
     const val firebase_storage = "19.1.1"
+    const val glide = "4.11.0"
     const val gradle = "4.0.0"
     const val google_material_design = "1.3.0-alpha01"
     const val google_gms_service = "4.3.3"
@@ -93,13 +94,16 @@ object DependencyInjection {
     const val koin_core = "org.koin:koin-android:${Versions.koin}"
     const val koin_view_model = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
     const val hilt_core = "com.google.dagger:hilt-android:${Versions.dagger_hilt}"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
     const val hilt_lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_hilt_lifecycle}"
     const val hilt_lifecycle_compiler = "androidx.hilt:hilt-compiler:${Versions.dagger_hilt_lifecycle}"
-    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}"
+
 }
 
 object ImageLoader {
     const val coli = "io.coil-kt:coil:${Versions.coil}"
+    const val glide_core = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 }
 
 object Firebase {

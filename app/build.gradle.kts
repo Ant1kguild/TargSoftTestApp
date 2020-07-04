@@ -13,6 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.app.targsoft.test"
+        multiDexEnabled = true
         minSdkVersion(16)
         targetSdkVersion(29)
         versionCode = 1
@@ -54,9 +55,12 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
 
+    implementation("com.android.support:multidex:1.0.3")
+
     addKotlinCoroutines()
     addAndroid()
     addNetWork()
     addDaggerHilt()
     addRoom()
+    addImageLoader()
 }
