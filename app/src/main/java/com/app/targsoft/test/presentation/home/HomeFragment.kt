@@ -1,7 +1,7 @@
 package com.app.targsoft.test.presentation.home
 
+import android.Manifest
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +11,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.app.targsoft.test.databinding.FragmentHomeBinding
 import com.app.targsoft.test.presentation.adapter.CatAdapter
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,7 +27,25 @@ class HomeFragment : Fragment() {
     private val catAdapter: CatAdapter by lazy {
         CatAdapter(
             { viewModel.addCatToFavorite(it) },
-            { Log.e("HomeFragment", "Url to load: $it") }
+            {
+                Dexter
+                    .withContext(context)
+                    .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .withListener(object : PermissionListener {
+                        override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                            viewModel.downloadFile(it)
+                        }
+
+                        override fun onPermissionRationaleShouldBeShown(p0: PermissionRequest?, p1: PermissionToken?) {
+                            Toast.makeText(context, "on Permission Rationale Should Be Shown", Toast.LENGTH_SHORT).show()
+                        }
+
+                        override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                            Toast.makeText(context, "Permission denied", Toast.LENGTH_SHORT).show()
+                        }
+
+                    }).check()
+            }
         )
     }
 

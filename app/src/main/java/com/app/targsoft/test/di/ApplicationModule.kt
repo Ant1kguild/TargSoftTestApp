@@ -6,15 +6,16 @@ import com.app.targsoft.test.data.api.CatApiHelper
 import com.app.targsoft.test.data.api.CatApiHelperImpl
 import com.app.targsoft.test.data.datasource.database.FavoriteCatDao
 import com.app.targsoft.test.data.datasource.database.FavoriteCatDataSource
+import com.app.targsoft.test.data.datasource.network.AndroidFileDownloader
+import com.app.targsoft.test.data.datasource.network.FileDownloaderDataSource
 import com.app.targsoft.test.data.datasource.network.RemoteCatDataSource
 import com.app.targsoft.test.data.datasource.network.RemoteCatDataSourceImpl
 import com.app.targsoft.test.data.mapper.MapperCatToFavoriteCat
 import com.app.targsoft.test.data.repository.CatRepositoryImpl
+import com.app.targsoft.test.data.repository.FileDownloadRepositoryImp
 import com.app.targsoft.test.domain.repository.CatRepository
-import com.app.targsoft.test.domain.usecases.AddCatToFavoriteUseCase
-import com.app.targsoft.test.domain.usecases.DeleteFavoriteUseCase
-import com.app.targsoft.test.domain.usecases.GetFavoriteUseCase
-import com.app.targsoft.test.domain.usecases.GetPagingCatsUseCase
+import com.app.targsoft.test.domain.repository.FileDownloadRepository
+import com.app.targsoft.test.domain.usecases.*
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -73,6 +74,10 @@ class ApplicationModule {
 
     @Provides
     @Singleton
+    fun provideFileDownloadDataSource(@ApplicationContext context: Context) : FileDownloaderDataSource = AndroidFileDownloader(context)
+
+    @Provides
+    @Singleton
     fun provideFavoriteCatDao(@ApplicationContext context: Context): FavoriteCatDao = FavoriteCatDataSource.getDatabase(context).animalDao()
 
     @Provides
@@ -97,6 +102,15 @@ class ApplicationModule {
         )
 
     @Provides
+    @Singleton
+    fun provideFileDownloadRepository(
+        fileDownloaderDataSource: FileDownloaderDataSource
+    ): FileDownloadRepository =
+        FileDownloadRepositoryImp(
+            fileDownloaderDataSource = fileDownloaderDataSource
+        )
+
+    @Provides
     fun provideAddCatToFavoriteUseCase(repo: CatRepository): AddCatToFavoriteUseCase = AddCatToFavoriteUseCase(repo)
 
     @Provides
@@ -107,5 +121,8 @@ class ApplicationModule {
 
     @Provides
     fun provideDeleteFavoriteUseCase(repo: CatRepository): DeleteFavoriteUseCase = DeleteFavoriteUseCase(repo)
+
+    @Provides
+    fun provideDownloadFileUseCase(repo: FileDownloadRepository): DownloadFileUseCase = DownloadFileUseCase(repo)
 
 }

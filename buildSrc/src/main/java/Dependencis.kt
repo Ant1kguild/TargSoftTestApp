@@ -11,6 +11,7 @@ object Versions {
     const val android_test_junit = "1.1.1"
     const val dagger_hilt = "2.28-alpha"
     const val dagger_hilt_lifecycle = "1.0.0-alpha01"
+    const val dexter_permission = "6.2.0"
     const val coil = "0.11.0"
     const val firebase_auth = "19.3.1"
     const val firebase_analytics = "17.4.3"
@@ -131,4 +132,8 @@ object AndroidTest {
 
 object Downloader{
     const val file_downloader_service = "com.github.naumanmir:filedownloadservice:${Versions.filedownloadservice}"
+}
+
+object Permission{
+    const val dexter = "com.karumi:dexter:${Versions.dexter_permission}"
 }

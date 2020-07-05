@@ -64,4 +64,5 @@ dependencies {
     addRoom()
     addImageLoader()
     addFileDownloader()
+    implementation(Permission.dexter)
 }
