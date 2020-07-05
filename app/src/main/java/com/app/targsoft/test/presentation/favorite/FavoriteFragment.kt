@@ -39,8 +39,6 @@ class FavoriteFragment : Fragment() {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         })
 
-
-
         return binding.root
     }
 }

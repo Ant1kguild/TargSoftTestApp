@@ -12,7 +12,6 @@ class FavoriteCatAdapter(
     private val onClickDeleteFavorite: (cat: FavoriteCat) -> Unit
 ) : RecyclerView.Adapter<FavoriteCatViewHolder>() {
 
-
     private var list: List<FavoriteCat> = emptyList()
 
     override fun onBindViewHolder(holder: FavoriteCatViewHolder, position: Int) {
@@ -30,18 +29,13 @@ class FavoriteCatAdapter(
             )
         ) { onClickDeleteFavorite(it) }
 
-
-
     override fun getItemCount(): Int = list.size
 
     fun setData(cats: List<FavoriteCat>) {
         list = cats
         notifyDataSetChanged()
     }
-
-
 }
-
 
 class FavoriteCatViewHolder(
     private val view: RecyclerViewFavoriteItemBinding,
